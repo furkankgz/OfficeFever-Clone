@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class TriggerManager : MonoBehaviour
 {
-    public delegate void OnCollectArea();
+    public delegate void OnCollectArea();    
     public static event OnCollectArea OnPaperCollect;
-    private bool _isCollecting;
+    public static PrinterManager _printerManager;
+    private bool _isCollecting, _isGiving;
+
+    public delegate void OnDeskArea();
+    public static event OnDeskArea OnPaperGive;
+
+    public static WorkerManager _workerManager;
 
     private void Start()
     {
@@ -21,6 +27,12 @@ public class TriggerManager : MonoBehaviour
             {
                 OnPaperCollect();
             }
+
+            if (_isGiving)
+            {
+                OnPaperGive();
+            }
+
             yield return new WaitForSeconds(.5f);
         }
     }
@@ -30,6 +42,13 @@ public class TriggerManager : MonoBehaviour
         if (other.gameObject.CompareTag("CollectArea"))
         {
             _isCollecting = true;
+            _printerManager = other.gameObject.GetComponent<PrinterManager>();
+        }
+
+        if (other.gameObject.CompareTag("WorkArea"))
+        {
+            _isGiving = true;
+            _workerManager = other.gameObject.GetComponent<WorkerManager>();
         }
     }
 
@@ -38,6 +57,12 @@ public class TriggerManager : MonoBehaviour
         if (other.gameObject.CompareTag("CollectArea"))
         {
             _isCollecting = false;
+            _printerManager = null;
+        }
+        if (other.gameObject.CompareTag("WorkArea"))
+        {
+            _isGiving = false;
+            _workerManager = null;
         }
     }
 }

@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 59214886}
   m_Layer: 0
   m_Name: PrinterDesk
-  m_TagString: Untagged
+  m_TagString: CollectArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,8 +246,12 @@ GameObject:
   - component: {fileID: 73367029}
   - component: {fileID: 73367028}
   - component: {fileID: 73367027}
+  - component: {fileID: 73367031}
+  - component: {fileID: 73367030}
+  - component: {fileID: 73367032}
+  - component: {fileID: 73367033}
   m_Layer: 0
-  m_Name: free_male_1(Clone)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,9 +305,69 @@ Transform:
   m_Children:
   - {fileID: 994054118}
   - {fileID: 1384059995}
+  - {fileID: 1790622282}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -89.8, z: 0}
+--- !u!114 &73367030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73367026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a66ea0047560d646b5f975845f31337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _paperList: []
+  _paperPrefab: {fileID: 6517350759133600348, guid: 017e64d431efaff419facd65861d0b8a, type: 3}
+  _moneyPrefab: {fileID: 0}
+  _collectPoint: {fileID: 1790622282}
+  _moneyDropPoint: {fileID: 0}
+--- !u!114 &73367031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73367026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed71e1d260a48c4eb65c386921f343c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &73367032
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73367026}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.17932142
+  m_Height: 1.0600404
+  m_Direction: 1
+  m_Center: {x: 0.0012471677, y: 0.5334987, z: -0.007997274}
+--- !u!54 &73367033
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73367026}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &92632845
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +527,37 @@ Transform:
   m_Father: {fileID: 1113793382}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &335989278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335989279}
+  m_Layer: 0
+  m_Name: MoneyDropPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335989279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335989278}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -2.1317, y: -1.9492526, z: -0.297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2049913023}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &390392742
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +621,37 @@ Transform:
   m_Father: {fileID: 658913914}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &415448338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 415448339}
+  m_Layer: 0
+  m_Name: DropPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &415448339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415448338}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -2.896, y: -1.1392531, z: -0.406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2049913023}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &457041400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1990,37 @@ Transform:
   m_Father: {fileID: 59214883}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1790622281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1790622282}
+  m_Layer: 0
+  m_Name: CollectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1790622282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790622281}
+  m_LocalRotation: {x: -0.06540306, y: 0, z: 0, w: 0.99785894}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 73367029}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -7.5, y: 0, z: 0}
 --- !u!1 &1833399085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,9 +2226,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2049913023}
+  - component: {fileID: 2049913024}
+  - component: {fileID: 2049913025}
   m_Layer: 0
   m_Name: Desk
-  m_TagString: Untagged
+  m_TagString: WorkArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2091,9 +2250,42 @@ Transform:
   - {fileID: 4186335451740390}
   - {fileID: 4992149770092280}
   - {fileID: 4811157565529127}
+  - {fileID: 415448339}
+  - {fileID: 335989279}
   m_Father: {fileID: 1925057537}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049913024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049913022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd79b398ec898c74888ded743da043d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _paperList: []
+  _moneyList: []
+  _paperPoint: {fileID: 415448339}
+  _moneyDropPoint: {fileID: 335989279}
+  _paperPrefab: {fileID: 6517350759133600348, guid: 017e64d431efaff419facd65861d0b8a, type: 3}
+  _moneyPrefab: {fileID: 6517350759133600348, guid: e2acbf7d8f3c4d642b7eba481a04b715, type: 3}
+--- !u!65 &2049913025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049913022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4986649, y: 0.77304983, z: 2.578578}
+  m_Center: {x: -2.9173803, y: -1.5100355, z: -1.08484}
 --- !u!1 &2093748716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,7 +2702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163334330603205}
   m_LocalRotation: {x: -0, y: 0.8405666, z: -0, w: 0.54170823}
-  m_LocalPosition: {x: -2.807823, y: -1.1392531, z: -1.473434}
+  m_LocalPosition: {x: -2.917, y: -1.1392531, z: -1.825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2570,7 +2762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393304894217716}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -2.6018217, y: -1.1392531, z: -0.86643386}
+  m_LocalPosition: {x: -2.661, y: -1.1392531, z: -1.145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
