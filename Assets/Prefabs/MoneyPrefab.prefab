@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6519057239633831584}
   - component: {fileID: 6485203566112882834}
   - component: {fileID: 6495765649831158372}
-  - component: {fileID: 2909080746245004348}
   - component: {fileID: 6383158241638151992}
+  - component: {fileID: 3381487090675150447}
   m_Layer: 0
   m_Name: MoneyPrefab
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2909080746245004348
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6517350759133600348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.296875, y: 0.046875, z: 0.390625}
-  m_Center: {x: 0.0078125, y: 0.0234375, z: 0.0390625}
 --- !u!208 &6383158241638151992
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -115,3 +102,16 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.008, y: 0.023000002, z: 0.039}
   m_TimeToStationary: 0.5
+--- !u!65 &3381487090675150447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517350759133600348}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.29687497, y: 0.046874996, z: 0.39062497}
+  m_Center: {x: 0.0078124995, y: 0.023437498, z: 0.039062496}

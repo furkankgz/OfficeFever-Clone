@@ -23,7 +23,7 @@ public class WorkerManager : MonoBehaviour
                 GetMoney();
                 RemoveLast();
             }
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -37,7 +37,7 @@ public class WorkerManager : MonoBehaviour
     public void GetMoney()
     {
         GameObject temp = Instantiate(_moneyPrefab);
-        temp.transform.position = new Vector3(_moneyDropPoint.position.x, ((float)_moneyList.Count / 10), _moneyDropPoint.position.z);
+        temp.transform.position = new Vector3(_moneyDropPoint.position.x, ((float)_moneyList.Count / 20), _moneyDropPoint.position.z);
         _moneyList.Add(temp);
     }
 

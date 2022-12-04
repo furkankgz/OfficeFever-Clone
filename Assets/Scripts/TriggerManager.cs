@@ -12,7 +12,15 @@ public class TriggerManager : MonoBehaviour
     public delegate void OnDeskArea();
     public static event OnDeskArea OnPaperGive;
 
+    public delegate void OnMoneyArea();
+    public static event OnMoneyArea OnMoneyCollected;
     public static WorkerManager _workerManager;
+    
+    public delegate void OnBuyArea();
+    public static event OnBuyArea OnBuyingDesk;
+    public static BuyArea _areaToBuy;
+
+
 
     private void Start()
     {
@@ -37,8 +45,23 @@ public class TriggerManager : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Money"))
+        {
+            OnMoneyCollected();
+            Destroy(other.gameObject);
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.CompareTag("BuyArea"))
+        {
+            OnBuyingDesk();
+            _areaToBuy = other.gameObject.GetComponent<BuyArea>();
+        }
+
         if (other.gameObject.CompareTag("CollectArea"))
         {
             _isCollecting = true;
@@ -63,6 +86,10 @@ public class TriggerManager : MonoBehaviour
         {
             _isGiving = false;
             _workerManager = null;
+        }
+        if (other.gameObject.CompareTag("BuyArea"))
+        {
+            _areaToBuy = null;
         }
     }
 }
